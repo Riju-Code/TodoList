@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodoList</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <div class="box" id="heading">
+        <h1>
+            <%= listTitle %>
+        </h1>
+    </div>
+
+    <div class="box">
+
+        <% for(var i=0; i< newlistItems.length; i++){ %>
+            <div class="item">
+                <input type="checkbox">
+                <p>
+                    <% newlistItems[i] %>
+                </p>
+            </div>
+
+            <% } %>
+
+                <form class="item" action="/" method="post">
+                    <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+                    <button type="submit" name="newItem" value="<%= listTitle %>">+</button>
+
+                    <!-- After adding any item in the work list it is getting added in the home page -->
+
+                    <!-- So after console loging it .. it is found that it can be manupilated using the "value" of the button.. so it is changed accordingly -->
+                </form>
+
+    </div>
+
+</body>
+
+</html>
